@@ -1,2 +1,1 @@
-# face-recognition-server
-Based on face-api.js
+# Face recognition based on face-api.js
