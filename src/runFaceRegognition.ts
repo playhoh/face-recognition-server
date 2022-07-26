@@ -29,7 +29,13 @@ export async function init() {
     console.log("initialized net just now")
 }
 
-export async function findFaces(url: string): Promise<Box[]> {
+export type Result = {
+    width: number,
+    height: number,
+    faces: Box[]
+}
+
+export async function findFaces(url: string): Promise<Result> {
     await init()
 
     const img = await canvas.loadImage(url)
@@ -51,7 +57,7 @@ export async function findFaces(url: string): Promise<Box[]> {
     })
     debug && console.log("results", results)
     recognitions++
-    return results
+    return {faces: results, width: img.width, height: img.height}
 }
 
 //async function testRun() {

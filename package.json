@@ -10,7 +10,7 @@
     "next": "^12.2.3",
     "react": "^18.2.0",
     "node-fetch": "^3.2.9",
-    "canvas": "^2.9.3",
+    "canvas": "2.6.1",
     "react-dom": "^18.2.0",
     "face-api.js": "^0.22.2",
     "tslib": "^1.11.1"

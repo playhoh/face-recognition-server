@@ -14,5 +14,5 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     } catch (e) {
         error = e.toString()
     }
-    res.status(200).send({ok: !error, faces, error})
+    res.status(200).send({...faces, ok: !error, error})
 }
