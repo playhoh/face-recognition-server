@@ -2,24 +2,27 @@
   "name": "face-api-server",
   "scripts": {
     "dev": "next dev",
-    "build": "next build"
+    "build": "next build",
+    "install-cairo-fedora": "yum install cairo cairo-devel cairomm-devel libjpeg-turbo-devel pango pango-devel pangomm pangomm-devel",
+    "install-cairo-ubuntu": "apt install libcairo2-dev",
+    "now-build": "npm run install-cairo-ubuntu && npm run build"
   },
   "author": "karstenwinter",
   "license": "MIT",
   "dependencies": {
-    "next": "^12.2.3",
-    "react": "^18.2.0",
-    "node-fetch": "^3.2.9",
-    "canvas": "2.6.1",
-    "react-dom": "^18.2.0",
+    "@tensorflow/tfjs-node": "^3.19.0",
+    "canvas": "^2.9.3",
     "face-api.js": "^0.22.2",
+    "next": "^12.2.3",
+    "node-fetch": "^3.2.9",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "tslib": "^1.11.1"
   },
   "devDependencies": {
     "@types/node": "^16.0.0",
     "@types/react": "^18.0.15",
     "ts-node": "^8.7.0",
-    "typescript": "^3.8.3",
-    "@mapbox/node-pre-gyp": "^1.0.9"
+    "typescript": "^3.8.3"
   }
 }

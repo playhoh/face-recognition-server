@@ -1,5 +1,6 @@
 import * as faceapi from 'face-api.js'
 import {canvas} from "./env"
+import path from 'path'
 
 export type Box = { x: number, y: number, width: number, height: number }
 
@@ -21,10 +22,15 @@ function getFaceDetectorOptions(net: faceapi.NeuralNetwork<any>) {
 
 export const faceDetectionOptions = getFaceDetectorOptions(faceDetectionNet)
 
+export const env = process.env.NODE_ENV
+export const isLocal = env === "development"
+
+export const weightsFolder = path.join(process.cwd(), 'weights')
+
 export async function init() {
     if (initialized)
         return
-    await faceDetectionNet.loadFromDisk('./weights')
+    await faceDetectionNet.loadFromDisk(weightsFolder)
     initialized = true
     console.log("initialized net just now")
 }
