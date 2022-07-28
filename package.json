@@ -3,7 +3,7 @@
   "scripts": {
     "dev": "next dev",
     "start": "next",
-    "build": "npm run install-cairo-ubuntu && npm install typescript @types/react && next build",
+    "build": "npm install typescript @types/react && next build",
     "install-cairo-fedora": "yum install cairo cairo-devel cairomm-devel libjpeg-turbo-devel pango pango-devel pangomm pangomm-devel",
     "install-cairo-ubuntu": "apt install libcairo2-dev",
     "now-build": "npm run install-cairo-ubuntu && next build",
