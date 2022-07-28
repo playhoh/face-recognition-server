@@ -3,10 +3,11 @@
   "scripts": {
     "dev": "next dev",
     "start": "next",
-    "build": "npm install --dev typescript && next build",
+    "build": "npm run install-cairo-ubuntu && npm install typescript @types/react && next build",
     "install-cairo-fedora": "yum install cairo cairo-devel cairomm-devel libjpeg-turbo-devel pango pango-devel pangomm pangomm-devel",
     "install-cairo-ubuntu": "apt install libcairo2-dev",
-    "now-build": "npm run install-cairo-ubuntu && npm run build"
+    "now-build": "npm run install-cairo-ubuntu && next build",
+    "comment": "now-build is for vercel, build is used by heroku"
   },
   "author": "karstenwinter",
   "license": "MIT",
