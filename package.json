@@ -2,7 +2,7 @@
   "name": "face-api-server",
   "scripts": {
     "dev": "next dev",
-    "start": "next",
+    "start": "set NODE_ENV=production && next",
     "build": "next build",
     "install-cairo-fedora": "yum install cairo cairo-devel cairomm-devel libjpeg-turbo-devel pango pango-devel pangomm pangomm-devel",
     "install-cairo-ubuntu": "apt install libcairo2-dev",

@@ -13,7 +13,7 @@ export default function Page() {
             + img + `"})}).then(x=>x.json()).then(console.log)`)
     }, [])
 
-    return <>
+    return <div>
         <Head><title>{title}</title></Head>
         <div>
             <h2>{title}</h2>
@@ -29,5 +29,5 @@ export default function Page() {
                 Copy to clipboard
             </button>
         </div>
-    </>
+    </div>
 }
