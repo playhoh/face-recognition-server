@@ -1,7 +1,6 @@
 import {findFaces} from "../../src/runFaceRegognition"
-import {NextApiRequest, NextApiResponse} from "next"
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(req, res) {
     if (req.method !== 'POST') {
         res.status(405).send({message: 'Only POST requests allowed'})
         return

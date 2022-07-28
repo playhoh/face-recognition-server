@@ -1,7 +1,6 @@
 import {init, initialized} from "../../src/runFaceRegognition"
-import {NextApiRequest, NextApiResponse} from "next"
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(req, res) {
     let justNow = false
     if (!initialized) {
         await init()

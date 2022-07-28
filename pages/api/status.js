@@ -1,7 +1,6 @@
 import {debug, env, initialized, isLocal, recognitions, weightsFolder} from "../../src/runFaceRegognition"
-import {NextApiRequest, NextApiResponse} from "next"
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(req, res) {
     res.status(200).send({
         initialized,
         debug,

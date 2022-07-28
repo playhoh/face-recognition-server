@@ -2,8 +2,6 @@ import * as faceapi from 'face-api.js'
 import {canvas} from "./env"
 import path from 'path'
 
-export type Box = { x: number, y: number, width: number, height: number }
-
 export let initialized = false
 export let recognitions = 0
 export let debug = false
@@ -14,7 +12,7 @@ const minConfidence = 0.5
 const inputSize = 408
 const scoreThreshold = 0.5
 
-function getFaceDetectorOptions(net: faceapi.NeuralNetwork<any>) {
+function getFaceDetectorOptions(net) {
     return net === faceapi.nets.ssdMobilenetv1
         ? new faceapi.SsdMobilenetv1Options({minConfidence})
         : new faceapi.TinyFaceDetectorOptions({inputSize, scoreThreshold})
@@ -35,13 +33,8 @@ export async function init() {
     console.log("initialized net just now")
 }
 
-export type Result = {
-    width: number,
-    height: number,
-    faces: Box[]
-}
 
-export async function findFaces(url: string): Promise<Result> {
+export async function findFaces(url) {
     await init()
 
     const img = await canvas.loadImage(url)
@@ -52,7 +45,7 @@ export async function findFaces(url: string): Promise<Result> {
     ctx.drawImage(img, 0, 0, img.width, img.height)
 
     const detections = await faceapi.detectAllFaces(canvas2, faceDetectionOptions)
-    let results: Box[] = detections.map(x => {
+    let results = detections.map(x => {
         let box = x.box
         return ({
             x: box.x,
