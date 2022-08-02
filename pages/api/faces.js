@@ -13,5 +13,6 @@ export default async function handler(req, res) {
     } catch (e) {
         error = e.toString()
     }
+    res.setHeader("Access-Control-Allow-Origin", "*")
     res.status(200).send({...faces, ok: !error, error})
 }
